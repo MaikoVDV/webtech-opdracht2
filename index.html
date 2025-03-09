@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="Group website about our team members." />
+    <meta charset="utf-8">
+    <meta name="description" content="Group website about our team members.">
     <title>UU Webtech | Bessel & Maiko</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/home.css">
   </head>
   <body>
     <header>
@@ -19,77 +20,47 @@
       </nav>
     </header>
     <main>
-      <h1 class="montserrat fw-600">Great to see you here!</h1>
-      <article>
-        <p class="montserrat fw-300 align-c">
+      <article class="intro-article">
+        <h1 class="intro-article__header">Great to see you here!</h1>
+        <p class="intro-article__content">
           For the course WebTech at Utrecht University we have made a website that has some information about two first
           years students: Bessel Withoos and Maiko van der Veen. If you would like to know more about either of these
-          two students you can click on their picture below.<br /><br />You can also navigate through the pages with the
-          navbar at the top of the screen.
+          two students you can click on their picture below.
+        </p>
+        <p class="intro-article__content"> You can also navigate through the pages with the navbar at the top of the screen.
         </p>
       </article>
-      <div class="card-container">
-        <div class="card">
-          <a href="profile.html">
-            <img src="assets/Test_Image.jpg" alt="A test image." />
-            <p class="montserrat fw-200 align-c">Profile</p>
+      <article class="card-container">
+        <section class="card">
+          <a class="card__link" href="profile.html">
+            <img class="card__portrait" src="assets/Test_Image.jpg" alt="A test image.">
+            <h3 class="card__title">Profile</h3>
           </a>
-        </div>
-      </div>
-      <span></span>
-      <article>
-        <h1 class="montserrat fw-400 align-c">Some of our projects</h1>
-        <table>
-          <thead>
-          <tr>
-            <th class="montserrat fw-600">Description</th>
-            <th class="montserrat fw-600">Link to project</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="montserrat fw-200">
-              Maiko's very messy but still largely functional kahoot ripoff he made in php.
-            </td>
-            <td class="montserrat fw-200">
-              <a href="https://github.com/MaikoVDV/informatica-php-game" target="_blank">GitHub</a>
-            </td>
-          </tr>
-          <tr>
-            <td class="montserrat fw-200">
-              Maiko's board game he made for the Informatica introduction project at the UU.<br /><br /><i
-                >May require sign-in</i
-              >
-            </td>
-            <td class="montserrat fw-200">
-              <a href="https://git.science.uu.nl/8365121/introproject-party-game" target="_blank">GitLab</a>
-            </td>
-          </tr>
-          <tr>
-            <td class="montserrat fw-200">
-              A very basic computer logic simulator made by Maiko written in Rust. The project is unfortuantely a bit
-              abandoned, but he's interested in picking it back up after the computer architecture course at Utrecht
-              University.
-            </td>
-            <td class="montserrat fw-200">
-              <a href="https://github.com/MaikoVDV/bevy-logic-sim" target="_blank">GitHub</a>
-            </td>
-          </tr>
-          <tr>
-            <td class="montserrat fw-200">
-              A Discord bot codebase written in JavaScript where Bessel contributed in, which is one of the languages
-              Bessel prefers the most (along with TypeScript).
-            </td>
-            <td class="montserrat fw-200">
-              <a href="https://github.com/thenorthsolution/V14Revamped-Codebase" target="_blank">GitHub</a>
-            </td>
-          </tr>
-        </tbody>
+        </section>
+      </article>
+      <span class="horizontal-bar"></span>
+      <article class="projects">
+        <h2 class="projects__header">Some of our projects</h2>
+        <table class="projects__table">
+          <thead class="projects__thead">
+            <tr class="projects__row projects__row--thead">
+              <th class="projects__table-cell">Description</th>
+              <th class="projects__table-cell">Link to project</th>
+            </tr>
+          </thead>
+          <tbody class="projects__tbody">
+            <tr class="projects__row">
+              <td class="projects__table-cell">
+                <p>Description</p>
+              </td>
+              <td class="projects__table-cell">Link</td>
+            </tr>
+          </tbody>
         </table>
       </article>
     </main>
-    <footer>
-      <h5 class="montserrat fw-200">&copy; 2025 Bessel Withoos & Maiko van der Veen</h5>
+    <footer class="footer">
+      <h5 class="footer__text">&copy; 2025 Bessel Withoos & Maiko van der Veen</h5>
     </footer>
   </body>
 </html>

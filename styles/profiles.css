@@ -1,32 +1,26 @@
 * {
   box-sizing: border-box;
 }
-body {
-  display: flex;
-  flex-direction: column;
-}
 .profile {
-  width: 60%;
-  /* position: absolute; */
   margin: auto;
   overflow-y: auto;
   padding-bottom: 12rem;
 }
-.centered-image-large {
-  max-height: 25rem;
+
+.profile__headshot-image {
+  max-height: 20vw;
   border-radius: 8px;
 }
 
-.profile-row {
+.profile__row {
+  margin: 1rem auto auto auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
 }
-.profile-row > * {
-  justify-content: center;
-}
-.profile-row > img {
+
+.profile__row-image {
   max-height: 12rem;
   border-radius: 8px;
 }

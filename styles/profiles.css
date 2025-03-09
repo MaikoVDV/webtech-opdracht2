@@ -27,13 +27,17 @@
 .reverse {
   flex-direction: row-reverse;
 }
-@media (max-width: 1100px) {
-  .profile {
-    width: 95%;
+@media (max-width: 1500px) {
+  .profile__headshot-image {
+    max-width: 100%;
+    max-height: 30vh;
   }
-  .profile-row {
+  .profile__row {
     flex-direction: column;
     text-align: center;
     gap: 0px;
+  }
+  .profile__row-image {
+    max-width: 100%;
   }
 }

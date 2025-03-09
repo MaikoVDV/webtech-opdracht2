@@ -51,6 +51,9 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
+.projects__header {
+    margin: 0px 0px 1rem;
+}
 
 .projects__table-cell a {
     color: white;

@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
+    <script src="scripts/file-upload.js"></script>
   </head>
   <body>
     <header>
@@ -33,10 +34,10 @@
       </article>
       <article class="card-container">
         <section class="card">
-          <a class="card__link" href="profile.html">
-            <img class="card__portrait" src="assets/Test_Image.jpg" alt="A test image.">
-            <h3 class="card__title">Profile</h3>
-          </a>
+          <img class="card__portrait" src="assets/Test_Image.jpg" alt="A test image.">
+          <!-- <h3 class="card__title">Profile</h3> -->
+          <label for="card__file-input">Select a profile document (.json)</label>
+          <input id="card__file-input" type="file" accept=".json">
         </section>
       </article>
       <span class="horizontal-bar"></span>

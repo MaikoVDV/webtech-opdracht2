@@ -102,6 +102,7 @@ nav ul li a:active {
 
 .footer__text {
   font-weight: 200;
+  margin: 0px auto;
 }
 
 .footer__img-link {
@@ -114,26 +115,23 @@ nav ul li a:active {
   opacity: 0.7;
 }
 
-/* Small phones */
+/* Phones */
 @media (max-width: 1100px) {
-  html {
-    font-size: 20px;
-  }
-}
-/* Large phones */
-@media (max-width: 1500px) {
   html {
     font-size: 18px;
   }
+
   main {
     width: 95%;
   }
+
   main {
     width: 95%;
   }
 }
+
 /* Desktop */
-@media (min-width: 1500px) {
+@media (min-width: 1100px) {
   html {
     font-size: 16px;
   }

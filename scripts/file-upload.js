@@ -25,11 +25,35 @@ function handleFileUpload(event) {
   });
 
   reader.readAsText(file);
-
-  console.log(`Selected ${file.name}`);
 }
 
 function readUploadedData(jsonString) {
-  var uploadedObject = JSON.parse(jsonString);
-  console.log(uploadedObject);
+  let uploadedData = JSON.parse(jsonString);
+  let processedArray = [];
+
+  if(!Array.isArray(uploadedData)) {
+    console.error("Uploaded invalid JSON file - root element is not an array.");
+    return;
+  }
+  uploadedData.forEach(obj => {
+    if (obj.type && classMap[obj.type]) {
+      /// TODO: There should be a more elegant way of determining which array to store the object in.
+      /// Maybe some reference stored in classMap?
+      switch (obj.type) {
+        case "Person":
+          people.push(classMap[obj.type].fromObj(obj));
+          break;
+        case "Student":
+          students.push(classMap[obj.type].fromObj(obj));
+          break;
+        case "Course":
+          courses.push(classMap[obj.type].fromObj(obj));
+          break;
+        default:
+          console.error("Tried storing unknown object which does appear in classMap.");
+          break;
+      }
+    }
+  });
+  updateDOM();
 }

@@ -11,10 +11,10 @@ function handleFileUpload(event) {
     // No file was entered.
     console.warn("Changed file input but did not select any file.");
     return;
-  }
+  };
   if (file.type != "application/json") {
     console.warn(`Selected a file with the wrong extension: ${file.type}`);
-  }
+  };
 
   const reader = new FileReader();
   reader.addEventListener("error", () => {
@@ -31,29 +31,31 @@ function readUploadedData(jsonString) {
   let uploadedData = JSON.parse(jsonString);
   let processedArray = [];
 
-  if(!Array.isArray(uploadedData)) {
+  if (!Array.isArray(uploadedData)) {
+    alert("Uploaded invalid JSON file - root element is not an array.");
     console.error("Uploaded invalid JSON file - root element is not an array.");
     return;
-  }
-  uploadedData.forEach(obj => {
+  };
+
+  const storageMap = {
+    Person: people,
+    Student: students,
+    Course: courses,
+  };
+
+  Object.keys(storageMap).forEach((key) => storageMap[key].length = 0);
+
+  for (const obj of uploadedData) {
     if (obj.type && classMap[obj.type]) {
-      /// TODO: There should be a more elegant way of determining which array to store the object in.
-      /// Maybe some reference stored in classMap?
-      switch (obj.type) {
-        case "Person":
-          people.push(classMap[obj.type].fromObj(obj));
-          break;
-        case "Student":
-          students.push(classMap[obj.type].fromObj(obj));
-          break;
-        case "Course":
-          courses.push(classMap[obj.type].fromObj(obj));
-          break;
-        default:
-          console.error("Tried storing unknown object which does appear in classMap.");
-          break;
-      }
-    }
-  });
+      const targetArray = storageMap[obj.type];
+
+      if (targetArray) {
+        targetArray.push(classMap[obj.type].fromObj(obj));
+      } else {
+        console.error(`Tried storing unknown object type: ${obj.type}`);
+      };
+    };
+  };
+
   updateDOM();
 }

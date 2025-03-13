@@ -1,0 +1,113 @@
+[
+  {
+    "type": "Student",
+    "firstName": "Bessel",
+    "lastName": "Withoos",
+    "age": 19,
+    "hobbies": [
+      "Playing tennis",
+      "Playing piano",
+      "Playing video games",
+      "Hanging out with friends"
+    ],
+    "email": "bessel.withoos@gmail.com",
+    "photo": "../assets_deprecated/Bessel_headshot.jpg",
+    "major": "BSc Informatica (Computer Science)",
+    "courses": [
+      "INFOIMP",
+      "INFONW",
+      "INFOB1LI",
+      "INFOB1PICA",
+      "INFOB2WT",
+      "INFODB"
+    ]
+  },
+  {
+    "type": "Student",
+    "firstName": "Maiko",
+    "lastName": "van der Veen",
+    "age": 19,
+    "hobbies": [
+      "Duolingo",
+      "Cycling",
+      "Gaming"
+    ],
+    "email": "maikovdveen@gmail.com",
+    "photo": "https://static.vecteezy.com/system/resources/previews/025/271/949/large_2x/camel-in-desert-eid-ul-adha-concept-generative-ai-free-photo.jpg",
+    "major": "BSc Informatica (Computer Science)",
+    "courses": [
+      "INFOIMP",
+      "INFONW",
+      "INFOB1LI",
+      "INFOB1PICA",
+      "INFOB2WT",
+      "INFODB"
+    ]
+  },
+  {
+    "type": "Course",
+    "code": "INFOIMP",
+    "title": "Imperatief programmeren",
+    "teacher": {
+      "type": "Teacher",
+      "firstName": "Jeroen",
+      "lastName": "Fokker"
+    },
+    "description": "In this subject you will learn the programming languages C# and Python, in which commands are bundled into so-called methods, which manipulate an object. It is therefore also an introduction to object-oriented programming."
+  },
+  {
+    "type": "Course",
+    "code": "INFONW",
+    "title": "Computerarchitectuur en netwerken",
+    "teacher": {
+      "type": "Teacher",
+      "firstName": "Lennart",
+      "lastName": "Herlaar"
+    },
+    "description": "In this course you will learn - among other things - the global structure of a (micro)processor and computer system, structure and use of file systems, inter-process communication via various mechanisms and calculations of performance of networks."
+  },
+  {
+    "type": "Course",
+    "code": "INFOB1LI",
+    "title": "Logica voor informatica",
+    "teacher": {
+      "type": "Teacher",
+      "firstName": "Wouter",
+      "lastName": "Swiersta"
+    },
+    "description": "This course is about modeling data using collections, express theorems about such data precisely using propositional and predicate logic and proving those theorems in different ways, such as using truth tables, proof strategies and natural deduction."
+  },
+  {
+    "type": "Course",
+    "code": "INFOB1PICA",
+    "title": "Informatica introductieproject",
+    "teacher": {
+      "type": "Teacher",
+      "firstName": "Jelle",
+      "lastName": "Oostveen"
+    },
+    "description": "For this course you have to come up and create your own project in groups. You will be assigned to a coach who will keep track of what is happening throughout the project and give feedback where needed."
+  },
+  {
+    "type": "Course",
+    "code": "INFOB2WT",
+    "title": "Webtechnologie",
+    "teacher": {
+      "type": "Teacher",
+      "firstName": "Sergey",
+      "lastName": "Sosnovsky"
+    },
+    "description": "In this course, you will look at how to program for this particular part of the internet in a safe and workable way, both for the end user and the programmer. The historical context and related technical concepts are explained."
+  },
+  {
+    "type": "Course",
+    "code": "INFODB",
+    "title": "Databases",
+    "teacher": {
+      "type": "Teacher",
+      "firstName": "Hans",
+      "lastName": "Philippi"
+    },
+    "description": "This course covers the basics of relational databases, focusing on designs and query languages. The internal workings of a database system and some recent developments, such as NoSQL databases, will be talked about as well during this course."
+  }
+]

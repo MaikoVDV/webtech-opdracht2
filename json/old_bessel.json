@@ -1,0 +1,46 @@
+{
+  "firstName": "Bessel",
+  "lastName": "Withoos",
+  "age": 19,
+  "hobbies": [
+    "Playing tennis",
+    "Playing piano",
+    "Playing video games",
+    "Hanging out with friends"
+  ],
+  "email": "bessel.withoos@gmail.com",
+  "photo": "../assets_deprecated/Bessel_headshot.jpg",
+  "major": "BSc Informatica (Computer Science)",
+  "courses": [
+    {
+      "title": "Imperatief programmeren (INFOIMP)",
+      "teacher": "drs. J.D. Fokker",
+      "description": "In this subject you will learn the programming languages C# and Python, in which commands are bundled into so-called methods, which manipulate an object. It is therefore also an introduction to object-oriented programming."
+    },
+    {
+      "title": "Computerarchitectuur en netwerken (INFONW)",
+      "teacher": "drs. L. Herlaar",
+      "description": "In this course you will learn - among other things - the global structure of a (micro)processor and computer system, structure and use of file systems, inter-process communication via various mechanisms and calculations of performance of networks."
+    },
+    {
+      "title": "Logica voor informatica (INFOB1LI)",
+      "teacher": "dr. W.S. Swierstra",
+      "description": "This course is about modeling data using collections, express theorems about such data precisely using propositional and predicate logic and proving those theorems in different ways, such as using truth tables, proof strategies and natural deduction."
+    },
+    {
+      "title": "Informatica introductieproject (INFOB1PICA)",
+      "teacher": "J.J. Oostveen",
+      "description": "For this course you have to come up and create your own project in groups. You will be assigned to a coach who will keep track of what is happening throughout the project and give feedback where needed."
+    },
+    {
+      "title": "Webtechnologie (INFOB2WT)",
+      "teacher": "dr. S.A. Sosnovsky",
+      "description": "In this course, you will look at how to program for this particular part of the internet in a safe and workable way, both for the end user and the programmer. The historical context and related technical concepts are explained."
+    },
+    {
+      "title": "Databases (INFODB)",
+      "teacher": "drs. H. Philippi",
+      "description": "This course covers the basics of relational databases, focusing on designs and query languages. The internal workings of a database system and some recent developments, such as NoSQL databases, will be talked about as well during this course."
+    }
+  ]
+}

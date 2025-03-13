@@ -1,70 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Group website about our team members.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>UU Webtech | Bessel & Maiko</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/home.css">
-    <script src="scripts/file-upload.js"></script>
-    <script src="scripts/person.js"></script>
-    <script src="scripts/dom-update.js"></script>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="profile.html">Profile</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <article class="intro-article">
-        <h1 class="intro-article__header">Great to see you here!</h1>
-        <p class="intro-article__content">
-          For the course WebTech at Utrecht University we have made a website that has some information about two first
-          years students: Bessel Withoos and Maiko van der Veen. If you would like to know more about either of these
-          two students you can click on their picture below.
-        </p>
-        <p class="intro-article__content"> You can also navigate through the pages with the navbar at the top of the screen.
-        </p>
-      </article>
-      <article class="card-container">
-        <section class="card">
-          <img class="card__portrait" src="assets/Test_Image.jpg" alt="A test image.">
-          <!-- <h3 class="card__title">Profile</h3> -->
-          <label for="card__file-input">Select a profile document (.json)</label>
-          <input id="card__file-input" type="file" accept=".json">
-        </section>
-      </article>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Group website about our team members.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UU Webtech | Bessel & Maiko</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/profiles.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul id="navbar">
+        <li><a href="#0">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="0" class="page">
+    <article class="intro-article">
+      <h1 class="intro-article__header">Great to see you here!</h1>
+      <p class="intro-article__content">
+        For the course WebTech at Utrecht University we have made a website that can display information about students
+        and their respective courses they have followed. To get started, select any JSON file that has a valid format to
+        get more details about a student.
+      </p>
+      <p class="intro-article__content">
+        <i>An example JSON file with the valid format can be found <a href="/json/example.json">here</a>.</i>
+      </p>
+    </article>
+    <article class="card-container">
+      <section class="card">
+        <label for="card__file-input">Select a valid JSON file</label>
+        <input id="card__file-input" type="file" accept=".json">
+        <script>
+          document.querySelector(".card").addEventListener("click", function (e) {
+            document.getElementById("card__file-input").click();
+          });
+        </script>
+      </section>
+    </article>
+  </main>
+  <main id="1" class="page">
+    <article>
+      <img class="profile__headshot-image" src="assets/Test_Image.jpg" alt="A test image.">
+      <h1 class="profile__title">Name</h1>
       <span class="horizontal-bar"></span>
-      <article class="projects">
-        <h2 class="projects__header">Some of our projects</h2>
-        <table class="projects__table">
-          <thead class="projects__thead">
-            <tr class="projects__row projects__row--thead">
-              <th class="projects__table-cell">Description</th>
-              <th class="projects__table-cell">Link to project</th>
-            </tr>
-          </thead>
-          <tbody class="projects__tbody">
-            <tr class="projects__row">
-              <td class="projects__table-cell">
-                <p>Description</p>
-              </td>
-              <td class="projects__table-cell">Link</td>
-            </tr>
-          </tbody>
-        </table>
-      </article>
-    </main>
-    <footer class="footer">
-      <h5 class="footer__text">&copy; 2025 Bessel Withoos & Maiko van der Veen</h5>
-    </footer>
-  </body>
+      <section class="profile__row">
+        <p class="profile__row-description">Ea fuga porro deserunt sed incidunt aliquam sint. Deserunt ea veritatis
+          odit. Non vel ipsa fugiat repellendus corrupti sed pariatur aut. Tempore culpa voluptas qui quo. Voluptatem
+          praesentium voluptatem ut esse. Deserunt qui sit voluptatem tenetur. Ut omnis sit libero illo corporis.</p>
+        <img class="profile__row-image" src="assets/Test_Image.jpg" alt="A test image.">
+      </section>
+    </article>
+  </main>
+  <footer class="footer">
+    <h5 class="footer__text">&copy; 2025 Bessel Withoos & Maiko van der Veen</h5>
+  </footer>
+
+  <script src="scripts/file_upload.js"></script>
+  <script src="scripts/person.js"></script>
+  <script src="scripts/dom_update.js"></script>
+</body>
+
 </html>

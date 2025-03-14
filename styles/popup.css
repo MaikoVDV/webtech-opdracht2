@@ -36,7 +36,7 @@
   flex-direction: column;
   gap: 1em;
 }
-.styling-popup__button-list {
+.styling-popup__radio-list {
   display: flex;
   flex-direction: row;
 }
@@ -52,4 +52,7 @@
 }
 .styling-popup__button {
   min-width: 7em;
+}
+.styling-popup__radio-container {
+  height: 1em;
 }

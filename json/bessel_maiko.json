@@ -5,10 +5,10 @@
     "lastName": "Withoos",
     "age": 19,
     "hobbies": [
-      "Playing tennis",
-      "Playing piano",
-      "Playing video games",
-      "Hanging out with friends"
+      "play tennis",
+      "play piano",
+      "play video games",
+      "hang out with friends"
     ],
     "email": "bessel.withoos@gmail.com",
     "photo": "../assets_deprecated/Bessel_headshot.jpg",
@@ -28,12 +28,12 @@
     "lastName": "van der Veen",
     "age": 19,
     "hobbies": [
-      "Duolingo",
-      "Cycling",
-      "Gaming"
+      "play Duolingo",
+      "cycle",
+      "game"
     ],
     "email": "maikovdveen@gmail.com",
-    "photo": "https://static.vecteezy.com/system/resources/previews/025/271/949/large_2x/camel-in-desert-eid-ul-adha-concept-generative-ai-free-photo.jpg",
+    "photo": "../assets_deprecated/Maiko_headshot.jpg",
     "major": "BSc Informatica (Computer Science)",
     "courses": [
       "INFOIMP",

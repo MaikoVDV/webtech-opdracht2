@@ -11,6 +11,8 @@ class Person {
   }
   get firstName() { return this.#firstName; }
   get lastName() { return this.#lastName; }
+  get fullName() { return this.#firstName + " " + this.#lastName; }
+
 }
 class Student extends Person {
   #age;
@@ -41,6 +43,12 @@ class Student extends Person {
       obj.courses
     );
   }
+  get age() { return this.#age; }
+  get hobbies() { return this.#hobbies; }
+  get email() { return this.#email; }
+  get photo() { return this.#photo; }
+  get major() { return this.#major; }
+  get courses() { return this.#courses; }
 }
 class Course {
   #title
@@ -59,6 +67,9 @@ class Course {
       obj.description
     );
   }
+  get title() { return this.#title; }
+  get teacher() { return this.#teacher; }
+  get description() { return this.#description; }
 }
 
 // Used to convert prototype-less JSON objects from the file to the proper JS objects above.

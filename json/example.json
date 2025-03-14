@@ -10,23 +10,20 @@
       "fishing"
     ],
     "email": "doejohn@example.com",
-    "photo": "path/to/photo.jpg",
+    "photo": "../assets/Test_Image.jpg",
     "major": "Example Major",
     "courses": [
-      "USE",
-      "COURSE CODES",
-      "ONLY"
+      {
+        "type": "Course",
+        "code": "ABCD12E",
+        "title": "Example course",
+        "teacher": {
+          "type": "Person",
+          "firstName": "Annie",
+          "lastName": "Who"
+        },
+        "description": "This is a description about the example course."
+      }
     ]
-  },
-  {
-    "type": "Course",
-    "code": "ABCD12E",
-    "title": "Example course",
-    "teacher": {
-      "type": "Teacher",
-      "firstName": "Annie",
-      "lastName": "Who"
-    },
-    "description": "This is a description about the example course."
   }
 ]

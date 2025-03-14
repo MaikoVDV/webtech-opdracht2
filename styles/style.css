@@ -56,6 +56,13 @@ main {
   border-top: 1px solid #ccc;
 }
 
+.horizontal-bar--transparent {
+  display: block;
+  width: 60%;
+  margin: 1rem auto;
+  border-top: 1px solid transparent;
+}
+
 .footer {
   background: rgba(31, 31, 31, 0.6);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -83,7 +90,7 @@ main {
   transition: opacity 0.2s ease-in-out;
 }
 
-.footer__img_link:hover {
+.footer__img-link:hover {
   opacity: 0.7;
 }
 

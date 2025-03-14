@@ -1,43 +1,120 @@
 * {
   box-sizing: border-box;
 }
-.profile {
+.content {
   margin: auto;
   overflow-y: auto;
   padding-bottom: 12rem;
 }
 
-.profile__headshot-image {
+.content a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.content__headshot-image {
   max-height: 20vw;
   border-radius: 8px;
 }
 
-.profile__row {
+.content__row {
   margin: 1rem auto auto auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
+  justify-content: space-around;
+  gap: 1rem;
+  position: relative;
 }
 
-.profile__row-image {
+.content__row-image {
   max-height: 12rem;
   border-radius: 8px;
 }
-.reverse {
-  flex-direction: row-reverse;
+
+.coursecard-container {
+  display: flex;
+  justify-content: center;
+  flex: 0 1 calc(50% - 20px);
+  box-sizing: border-box; 
+  margin: 0 auto;
 }
+
+.coursecard {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(5.5px);
+  backdrop-filter: blur(5.5px);
+  transition: transform 0.2s ease-in-out, box-shadow 0.6s;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 50%;
+  position: relative;
+}
+
+.coursecard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.coursecard:hover .course-tooltip {
+  display: flex;
+}
+.content__row:has(.coursecard:hover) {
+  z-index: 10;
+}
+.course-tooltip {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  background: black;
+  z-index: 1000;
+}
+.course-tooltip p {
+  z-index: 10;
+}
+/* .coursecard:hover::after {
+  content: attr(tooltip-data__title) "\n" "\nTeacher: " attr(tooltip-data__teacher);
+  white-space: pre;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  z-index: 10;
+  width: 200px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.coursecard:hover::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+} */
+
 @media (max-width: 1500px) {
-  .profile__headshot-image {
+  .content__headshot-image {
     max-width: 100%;
     max-height: 30vh;
   }
-  .profile__row {
+  .content__row {
     flex-direction: column;
     text-align: center;
-    gap: 0px;
+    gap: 20px;
   }
-  .profile__row-image {
+  .content__row-image {
     max-width: 100%;
   }
 }

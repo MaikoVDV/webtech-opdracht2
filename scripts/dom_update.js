@@ -5,6 +5,7 @@ let courses = [];
 const navbar = document.getElementsByClassName("navbar__pages")[0];
 
 function updateDOM() {
+  console.log(people, students, courses);
   addDynamicPagesToNavbar();
   addContentToPages(students, courses);
   updateStylableElementList();
@@ -14,25 +15,88 @@ function addContentToPages(students, courses) {
   const body = document.body;
 
   for (let i = 0; i < students.length; i++) {
+    const student = students[i];
 
-    const section = elementBuilder("section", { class: "profile__row" });
-    section.appendChild(
-      elementBuilder("img", { class: "profile__row-image", src: students[i].photo, alt: "A test image." })
+    const profileRow = elementBuilder("section", { class: "content__row" });
+    profileRow.append(
+      elementBuilder("img", { class: "content__row-image", src: student.photo, alt: student.photo.split("/").pop() }),
+      elementBuilder("p", { class: "content__row-description", textContent: addText(student) })
     );
-    section.appendChild(
-      elementBuilder("p", { class: "profile__row-description", textContent: addText(students[i]) })
+
+    const buttonCardContainer = elementBuilder("a", { href: `mailto:${student.email}`, class: "card-container" });
+    buttonCardContainer.append(
+      elementBuilder("section", { class: "card", innerHTML: `<p>${student.email}</p>` })
+    );
+
+    const coursesRows = [];
+    let cardCount = 0;
+    let coursesRow;
+
+    for (const course of courses) {
+      if (student.courses.some(c => c.title === course.title)) {
+        if (cardCount === 0 || cardCount % 2 === 0) {
+          coursesRow = elementBuilder("section", { class: "content__row" });
+          coursesRows.push(coursesRow);
+        };
+
+        const courseCardContainer = elementBuilder("section", { class: "coursecard-container" });
+        const card = courseCardContainer.appendChild(
+          elementBuilder("section", {
+            class: "coursecard",
+            innerHTML: `<p>${course.title}</p>`,
+            "tooltip-data__title": course.title,
+            "tooltip-data__description": course.description,
+            "tooltip-data__teacher": course.teacher.fullName
+          })
+        );
+        const tooltip = card.appendChild(
+          elementBuilder("div", {
+            class: "course-tooltip"
+          })
+        );
+        tooltip.appendChild(
+          elementBuilder("p", {
+            textContent: course.title
+          })
+        );
+        tooltip.appendChild(
+          elementBuilder("p", {
+            textContent: course.description
+          })
+        );
+        console.log(course.teacher);
+        tooltip.appendChild(
+          elementBuilder("p", {
+            textContent: `${course.teacher.firstName} ${course.teacher.lastName}`
+          })
+        );
+        coursesRow.appendChild(
+          courseCardContainer
+        );
+        cardCount++;
+      };
+    };
+
+    const article = elementBuilder("article", { class: "content" });
+    article.append(
+      elementBuilder("h1", { class: "content__title", textContent: student.fullName }),
+      elementBuilder("span", { class: "horizontal-bar" }),
+      profileRow,
+      elementBuilder("span", { class: "horizontal-bar--transparent" }),
+      elementBuilder("p", { class: "content__row-description", textContent: "If you would like to contact me, you can send me an email:" }),
+      buttonCardContainer,
+      elementBuilder("span", { class: "horizontal-bar--transparent" }),
+      elementBuilder("span", { class: "horizontal-bar--transparent" }),
+      elementBuilder("h3", { class: "content__title", textContent: "My courses" }),
+      ...coursesRows
     );
 
     const main = elementBuilder("main", { id: (i + 1).toString(), class: "page" });
-    main.appendChild(
-      elementBuilder("h1", { class: "profile__title", textContent: students[i].fullName })
+    main.append(
+      article
     );
-    main.appendChild(
-      elementBuilder("span", { class: "horizontal-bar" })
-    );
-    main.appendChild(section);
 
-    body.insertBefore(main, body.children[body.childElementCount - 5]);
+    body.insertBefore(main, body.children[body.childElementCount - 7]);
   };
 };
 
@@ -97,10 +161,12 @@ function elementBuilder(element, args) {
   const builtElement = document.createElement(element);
 
   for (const [key, value] of Object.entries(args)) {
-    key === "textContent"
-      ? builtElement.textContent = value
-      : builtElement.setAttribute(key, value);
-  }
+    if (["textContent", "innerHTML"].includes(key)) {
+      builtElement[key] = value;
+    } else {
+      builtElement.setAttribute(key, value);
+    };
+  };
 
   return builtElement;
 };

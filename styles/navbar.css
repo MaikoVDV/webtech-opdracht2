@@ -1,0 +1,105 @@
+#navbar {
+  display: flex;
+  justify-content: space-between;
+
+  --dropdown-background: #00000055;
+  --dropdown-hover-background: #00000011;
+  --dropdown-selected-background: #00000022;
+}
+
+.navbar__pages,
+.navbar__styling {
+  list-style: none;
+  padding: 0;
+  margin: 0px 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Page navigation */
+.navbar__pages {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar__pages li {
+  margin: 0 15px;
+  padding: 0 20px;
+  align-content: center;
+}
+
+.navbar__pages li a,
+.el-selector__button,
+.style-selector__button {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar__pages li a:hover {
+  color: #ff9800;
+  border-bottom: 2px solid #ff9800;
+}
+
+.navbar__pages li a:active {
+  color: #f44336;
+  border-bottom: 2px solid #f44336;
+}
+
+/* Dropdowns */
+.navbar__styling {
+  margin-right: 1rem;
+}
+
+.el-selector,
+.style-selector {
+  position: relative;
+  display: inline-block;
+}
+.el-selector__button,
+.style-selector__button {
+  padding: 1rem 1.5rem;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.el-selector__list,
+.style-selector__list {
+  display: none;
+  position: absolute;
+  min-width: 100%;
+  background-color: var(--dropdown-background);
+  border-radius: 0px 0px 5px 5px;
+}
+.el-selector:hover .el-selector__list,
+.style-selector:hover .style-selector__list {
+  display: block;
+}
+.el-selector:hover .el-selector__button,
+.style-selector:hover .style-selector__button {
+  background-color: var(--dropdown-background);
+}
+.el-selector__option,
+.style-selector__option {
+  color: white;
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 0.5em 0px;
+  white-space: pre-line;
+}
+.el-selector__option:last-child,
+.style-selector__option:last-child {
+  border-radius: 0px 0px 5px 5px;
+}
+.el-selector__option:hover,
+.style-selector__option:hover {
+  background-color: var(--dropdown-hover-background);
+}
+.el-selector__option--selected,
+.style-selector__option--selected {
+  background-color: var(--dropdown-selected-background) !important;
+}

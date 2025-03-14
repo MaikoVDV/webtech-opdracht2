@@ -1,12 +1,13 @@
-// let people = [];
+let people = [];
 let students = [];
 let courses = [];
 
-const navbar = document.getElementById("navbar");
+const navbar = document.getElementsByClassName("navbar__pages")[0];
 
 function updateDOM() {
-  addContentToPages(students, courses);
+  // addContentToPages(students, courses);
   addDynamicPagesToNavbar();
+  updateStylableElementList()
 };
 
 function addContentToPages(students, courses) {

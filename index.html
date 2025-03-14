@@ -17,9 +17,24 @@
 
 <body>
   <header>
-    <nav>
-      <ul id="navbar">
+    <nav id="navbar">
+      <ul class="navbar__pages">
         <li><a href="#0">Home</a></li>
+      </ul>
+      <ul class="navbar__styling">
+        <li class="el-selector">
+          <div class="el-selector__button">Element</div>
+          <div class="el-selector__list">
+          </div>
+        </li>
+        <li class="style-selector">
+          <div class="style-selector__button">Style</div>
+          <div class="style-selector__list">
+            <button class="style-selector__option">color</button>
+            <button class="style-selector__option">background</button>
+            <button class="style-selector__option">font-size</button>
+          </div>
+        </li>
       </ul>
     </nav>
   </header>
@@ -64,6 +79,7 @@
     <h5 class="footer__text">&copy; 2025 Bessel Withoos & Maiko van der Veen</h5>
   </footer>
 
+  <script src="scripts/styling.js"></script>
   <script src="scripts/file_upload.js"></script>
   <script src="scripts/person.js"></script>
   <script src="scripts/dom_update.js"></script>

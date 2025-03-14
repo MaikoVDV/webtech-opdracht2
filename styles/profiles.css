@@ -24,6 +24,7 @@
   align-items: center;
   justify-content: space-around;
   gap: 1rem;
+  position: relative;
 }
 
 .content__row-image {
@@ -58,8 +59,23 @@
   transform: translateY(-10px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-.coursecard:hover::after {
+.coursecard:hover .course-tooltip {
+  display: flex;
+}
+.content__row:has(.coursecard:hover) {
+  z-index: 10;
+}
+.course-tooltip {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  background: black;
+  z-index: 1000;
+}
+.course-tooltip p {
+  z-index: 10;
+}
+/* .coursecard:hover::after {
   content: attr(tooltip-data__title) "\n" "\nTeacher: " attr(tooltip-data__teacher);
   white-space: pre;
   position: absolute;
@@ -86,7 +102,7 @@
   border-width: 5px;
   border-style: solid;
   border-color: #333 transparent transparent transparent;
-}
+} */
 
 @media (max-width: 1500px) {
   .content__headshot-image {

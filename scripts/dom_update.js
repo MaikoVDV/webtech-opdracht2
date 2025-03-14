@@ -40,7 +40,7 @@ function addContentToPages(students, courses) {
         };
 
         const courseCardContainer = elementBuilder("section", { class: "coursecard-container" });
-        courseCardContainer.append(
+        const card = courseCardContainer.appendChild(
           elementBuilder("section", {
             class: "coursecard",
             innerHTML: `<p>${course.title}</p>`,
@@ -48,8 +48,29 @@ function addContentToPages(students, courses) {
             "tooltip-data__description": course.description,
             "tooltip-data__teacher": course.teacher.fullName
           })
-        )
-        coursesRow.append(
+        );
+        const tooltip = card.appendChild(
+          elementBuilder("div", {
+            class: "course-tooltip"
+          })
+        );
+        tooltip.appendChild(
+          elementBuilder("p", {
+            textContent: course.title
+          })
+        );
+        tooltip.appendChild(
+          elementBuilder("p", {
+            textContent: course.description
+          })
+        );
+        console.log(course.teacher);
+        tooltip.appendChild(
+          elementBuilder("p", {
+            textContent: `${course.teacher.firstName} ${course.teacher.lastName}`
+          })
+        );
+        coursesRow.appendChild(
           courseCardContainer
         );
         cardCount++;

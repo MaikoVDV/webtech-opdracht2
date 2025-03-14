@@ -10,16 +10,49 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="styles/home.css">
-  <link rel="stylesheet" href="styles/profiles.css">
+  <link rel="stylesheet" href="styles/style.css" defer>
+  <link rel="stylesheet" href="styles/home.css" defer>
+  <link rel="stylesheet" href="styles/profiles.css" defer>
+  <link rel="stylesheet" href="styles/popup.css" defer>
 </head>
 
 <body>
+  <article class="styling-popup" style="display: none">
+    <div class="styling-popup__shadow"></div>
+    <section class="styling-popup__window">
+      <h2 class="styling-popup__header">Select a style for [element]</h2>
+      <div class="styling-popup__options-container">
+        <input class="styling-popup__text-input" type="text">
+        <div class="styling-popup__button-list">
+          <button class="styling-popup__button">hi</button>
+          <button class="styling-popup__button">sup</button>
+        </div>
+      </div>
+      <div class="styling-popup__controls">
+        <button class="styling-popup__button styling-popup__button--cancel">Cancel</button>
+        <button class="styling-popup__button styling-popup__button--submit">Submit</button>
+      </div>
+    </section>
+  </article>
   <header>
-    <nav>
-      <ul id="navbar">
+    <nav id="navbar">
+      <ul class="navbar__pages">
         <li><a href="#0">Home</a></li>
+      </ul>
+      <ul class="navbar__styling">
+        <li class="el-selector">
+          <div class="el-selector__button">Element</div>
+          <div class="el-selector__list">
+          </div>
+        </li>
+        <li class="style-selector">
+          <div class="style-selector__button">Style</div>
+          <div class="style-selector__list">
+            <button class="style-selector__option">color</button>
+            <button class="style-selector__option">background</button>
+            <button class="style-selector__option">font-size</button>
+          </div>
+        </li>
       </ul>
     </nav>
   </header>
@@ -51,9 +84,11 @@
     <h5 class="footer__text">&copy; 2025 Bessel Withoos & Maiko van der Veen</h5>
   </footer>
 
+  <script src="scripts/styling.js"></script>
   <script src="scripts/file_upload.js"></script>
   <script src="scripts/person.js"></script>
   <script src="scripts/dom_update.js"></script>
+  <script src="scripts/popup.js"></script>
 </body>
 
 </html>

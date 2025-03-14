@@ -1,3 +1,5 @@
+@import url(navbar.css);
+
 html {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -50,39 +52,6 @@ main {
 
 .page.selected {
   display: flex;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
-
-nav ul li {
-  margin: 0 15px;
-  padding: 0 20px 0 20px;
-  align-content: center;
-}
-
-nav ul li a {
-  color: #fff;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-  border-bottom: 2px solid transparent;
-}
-
-nav ul li a:hover {
-  color: #ff9800;
-  border-bottom: 2px solid #ff9800;
-}
-
-nav ul li a:active {
-  color: #f44336;
-  border-bottom: 2px solid #f44336;
 }
 
 .horizontal-bar {

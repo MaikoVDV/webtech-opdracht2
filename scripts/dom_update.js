@@ -2,11 +2,12 @@ let people = [];
 let students = [];
 let courses = [];
 
-const navbar = document.getElementById("navbar");
+const navbar = document.getElementsByClassName("navbar__pages")[0];
 
 function updateDOM() {
   addDynamicPagesToNavbar();
   addContentToPages(students, courses);
+  updateStylableElementList()
 };
 
 function addContentToPages(students, courses) {

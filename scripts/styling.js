@@ -3,8 +3,12 @@ let elDropdownHeader;
 let selectedEl;
 
 window.addEventListener("load", () => {
-  elDropdownList = document.getElementsByClassName("el-selector__list")[0];
-  elDropdownHeader = document.getElementsByClassName("el-selector__button")[0];
+  elDropdownList = document.querySelector(".el-selector__list");
+  elDropdownHeader = document.querySelector(".el-selector__button");
+  let styleDropdownHeader = document.querySelector(".style-selector__button");
+  styleDropdownHeader.addEventListener("click", () => {
+    createPopup("Header", [], () => {});
+  });
 
   updateStylableElementList();
 });

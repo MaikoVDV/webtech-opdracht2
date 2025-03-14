@@ -17,25 +17,17 @@ const styleMap = [
 ]
 
 window.addEventListener("load", () => {
-  elDropdownList = document.querySelector(".el-selector__list");
-  styleDropdownList = document.querySelector(".style-selector__list");
-  elDropdownHeader = document.querySelector(".el-selector__button");
-  let styleDropdownHeader = document.querySelector(".style-selector__button");
-  styleDropdownHeader.addEventListener("click", () => {
-    createPopup("styling", "Header",
-      [{ type: "text", name: "text1" },
-      { type: "radio", name: "color1", subOptions: ["red", "green", "blue"] },
-      { type: "color", name: "picker1" }]
-      , (output) => {
-        console.log(output);
-      });
-  });
+  elDropdownList = document.getElementById("element-selector-list");
+  styleDropdownList = document.getElementById("style-selector-list");
+  elDropdownHeader = document.getElementById("element-selector-header");
+  console.log(elDropdownHeader);
 
   updateStylableElementList();
   updateStylablePropertiesList();
 });
 
 function updateStylableElementList() {
+  if (!elDropdownList) return; // Prevents error due to script loading delays
   elDropdownList.replaceChildren();
 
   let styleables = getStyleableElements();
@@ -62,7 +54,7 @@ function updateStylablePropertiesList() {
         index++;
         return { type: input, name: `${input}${index}`}
       })
-      createPopup("styling", `Select ${property} for ${selectedEl.tagName.toLowerCase()}`, inputs,
+      createPopup(`Select ${property} for ${selectedEl.tagName.toLowerCase()}`, inputs,
         (output) => {
           console.log(output[inputs[0]]);
           selectedEl.style[property] = output[inputs[0].name];

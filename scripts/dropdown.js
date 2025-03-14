@@ -1,8 +1,8 @@
 function addElementToDropdown(dropdownEl, element, clickHandler) {
   let button = document.createElement("button");
-  button.classList.add("el-selector__option");
+  button.classList.add("nav-dropdown__option");
   if (element == selectedEl) {
-    button.classList.add("el-selector__option--selected");
+    button.classList.add("nav-dropdown__option--selected");
     elDropdownHeader.textContent = element.tagName;
   }
 
@@ -12,9 +12,10 @@ function addElementToDropdown(dropdownEl, element, clickHandler) {
   button.textContent = `${element.tagName}${classText}`;
   dropdownEl.appendChild(button);
 }
+
 function addItemToDropdown(dropdownEl, text, clickHandler) {
   let button = document.createElement("button");
-  button.classList.add("el-selector__option");
+  button.classList.add("nav-dropdown__option");
 
   button.addEventListener("click", () => clickHandler(text));
 

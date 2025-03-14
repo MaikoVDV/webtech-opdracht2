@@ -1,12 +1,7 @@
 @import url(navbar.css);
 
-html {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-html::-webkit-scrollbar {
-  display: none;
+:root {
+  --border-radius: 5px;
 }
 
 body {

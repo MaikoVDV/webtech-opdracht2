@@ -7,7 +7,7 @@ const navbar = document.getElementsByClassName("navbar__pages")[0];
 function updateDOM() {
   addDynamicPagesToNavbar();
   addContentToPages(students, courses);
-  updateStylableElementList()
+  updateStylableElementList();
 };
 
 function addContentToPages(students, courses) {
@@ -87,6 +87,7 @@ function renderSelectedPage(index) {
       ? page.classList.add("selected")
       : page.classList.remove("selected");
   };
+  updateStylableElementList();
 };
 
 renderSelectedPage("0");

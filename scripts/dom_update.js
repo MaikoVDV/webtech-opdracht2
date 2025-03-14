@@ -14,22 +14,21 @@ function addContentToPages(students, courses) {
 
   for (let i = 0; i < students.length; i++) {
 
-    const section = elementBuilder("section", { class: "profile__row" });
-    section.appendChild(
-      elementBuilder("img", { class: "profile__row-image", src: students[i].photo, alt: "A test image." })
-    );
-    section.appendChild(
+    const profileRow = elementBuilder("section", { class: "profile__row" });
+    profileRow.append(
+      elementBuilder("img", { class: "profile__row-image", src: students[i].photo, alt: students[i].photo.split("/").pop() }),
       elementBuilder("p", { class: "profile__row-description", textContent: addText(students[i]) })
     );
 
+    const button = elementBuilder("article");
+
     const main = elementBuilder("main", { id: (i + 1).toString(), class: "page" });
-    main.appendChild(
-      elementBuilder("h1", { class: "profile__title", textContent: students[i].fullName })
+    main.append(
+      elementBuilder("h1", { class: "profile__title", textContent: students[i].fullName }),
+      elementBuilder("span", { class: "horizontal-bar" }),
+      profileRow,
+      article
     );
-    main.appendChild(
-      elementBuilder("span", { class: "horizontal-bar" })
-    );
-    main.appendChild(section);
 
     body.insertBefore(main, body.children[body.childElementCount - 5]);
   };
